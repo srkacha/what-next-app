@@ -2,15 +2,19 @@ from util import dataUtil
 from util import fileUtil
 
 ratingFitlerThreshold = 10000
+doFilter = False
 
 def main():
-    #filterRatings(ratingFitlerThreshold)
-    #filterMoviesFromAllTypes()
-    #filterMoviesBasedOnRatingsFile()
-    #filterCrewBasedOnMoviesFile()
-    #filterRolesBasedOnMoviesFile()
-    fitlerActorsFromRoles()
-    print("Filtering done!")
+    if doFilter:
+        filterRatings(ratingFitlerThreshold)
+        filterMoviesFromAllTypes()
+        filterMoviesBasedOnRatingsFile()
+        filterCrewBasedOnMoviesFile()
+        filterRolesBasedOnMoviesFile()
+        fitlerActorsFromRoles()
+        print("Filtering done!")
+    else:
+        print("Filtering disabled!")
 
 def filterRatings(threshold):
     ratingLines = fileUtil.readLinesFromFile("movie-data/ratings/data.tsv", "utf8")

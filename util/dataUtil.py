@@ -22,7 +22,6 @@ def getMoviesForFileContent(movieLines, ratingLines, crewLines, actorLines):
         newmovie.setCrew(getCrewForMovieId(id, crewLines))
         newmovie.setActors(getActorsForMovieId(id, actorLines))
         movies.append(newmovie)
-        print(counter)
     return movies
 
 #Previous way of building the movie list was too slow cause it was iterating from the start of the actor, crew and rating lists for every movie
@@ -94,7 +93,6 @@ def getMoviesForFileContentOptimized(movieLines, ratingLines, crewLines, actorLi
         movies.append(newMovie)
 
         movieCounter += 1
-        print(movieCounter)
 
     return movies
 
@@ -241,7 +239,6 @@ def filterRolesBasedOnMoviesFile(movieLines):
                 movieCounter += 1
                 movieLine = movieLines[movieCounter]
                 movieLineId = re.split(r'\t+', movieLine)[0]
-            print(movieCounter)
     return filteredLines
 
 def filterActorsFromAllRoles(fileLines):

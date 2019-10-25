@@ -6,6 +6,7 @@ class Movie:
         self.id = id
         self.title = title
         self.year = year
+        self.runtime = runtime
         self.crew = []
         self.actors = []
         self.genres = []
