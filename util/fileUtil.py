@@ -6,5 +6,6 @@ def readLinesFromFile(fileDestination, fileEncoding):
         lines = file.readlines()
         return lines
     except:
+        print("Error")
         return UnicodeError
 
