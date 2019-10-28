@@ -6,10 +6,10 @@ from numpy import dot
 from numpy.linalg import norm
 
 def loadMovies():
-    movieLines = fileUtil.readLinesFromFile("movie-data/movies/filtered.tsv", "utf8")
-    ratingLines = fileUtil.readLinesFromFile("movie-data/ratings/filtered.tsv", "utf8")
-    crewLines = fileUtil.readLinesFromFile("movie-data/crew/filtered.tsv", "utf8")
-    actorLines = fileUtil.readLinesFromFile("movie-data/roles/actors.tsv", "utf8")
+    movieLines = fileUtil.readLinesFromFile("data/movies/filtered.tsv", "utf8")
+    ratingLines = fileUtil.readLinesFromFile("data/ratings/filtered.tsv", "utf8")
+    crewLines = fileUtil.readLinesFromFile("data/crew/filtered.tsv", "utf8")
+    actorLines = fileUtil.readLinesFromFile("data/roles/actors.tsv", "utf8")
     movies = dataUtil.getMoviesForFileContentOptimized(movieLines, ratingLines, crewLines, actorLines)
     return movies
 
