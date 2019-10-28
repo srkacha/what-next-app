@@ -11,6 +11,7 @@ class Movie:
         self.actors = []
         self.genres = []
         self.rating = rating
+        self.simIndex = 0
 
     def setActors(self, actors):
         self.actors = actors

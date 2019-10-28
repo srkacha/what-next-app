@@ -47,10 +47,28 @@ def getMovieSuggestionsForMovieId(movieId):
     #now we sort the results
     sortedResults = sorted(comapreResults.items(), key=lambda x: x[1], reverse=True)
     bestResults = sortedResults[1:11]
-    return bestResults
+    resultObjects = generateListOfObjectsBasedOnResults(bestResults)
+    return resultObjects
 
+def generateListOfObjectsBasedOnResults(bestResults):
+    movies = []
+    for result in bestResults:
+        movie = getMovieForMovieId(result[0])
+        movie.simIndex = result[1]
+        movies.append(movie)
+    return movies
 
-
+#returns first 10 suggestions it finds
+def getAutoCompleteSuggestionsBasedOnString(substring):
+    low = substring.lower()
+    suggestions = []
+    foundSuggConter = 0
+    for movie in movies:
+        if low in movie.title.lower():
+            suggestions.append(movie)
+            foundSuggConter += 1
+            if foundSuggConter == 10: return suggestions
+    return suggestions
 
 #exporting variables
 movies = loadMovies()

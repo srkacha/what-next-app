@@ -68,6 +68,8 @@ def getMoviesForFileContentOptimized(movieLines, ratingLines, crewLines, actorLi
             elif crewMovieId == id:
                 directors = re.split(r',', crewParts[1])
                 writers = re.split(r',', crewParts[2])
+                #removing the new line char in the last writers string
+                if len(writers) > 0: writers[len(writers) - 1] = re.sub(r'\n', '', writers[len(writers) - 1])
                 crew = directors + writers
                 break
             else:
