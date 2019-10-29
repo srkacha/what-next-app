@@ -40,6 +40,7 @@ def getMoviesForFileContentOptimized(movieLines, ratingLines, crewLines, actorLi
         year = movieParts[5]
         runtime = movieParts[7]
         genres = generateGenresList(movieParts[8])
+        if len(genres) > 0: genres[len(genres) - 1] = re.sub(r'\n', '', genres[len(genres) - 1])
         rating = 0
         crew = []
         actors =[]
