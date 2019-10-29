@@ -50,6 +50,22 @@ def getMovieSuggestionsForMovieId(movieId):
     resultObjects = generateListOfObjectsBasedOnResults(bestResults)
     return resultObjects
 
+def convertListOfObjectsToListOfDictionaries(movieList):
+    dictList = []
+    for movie in movieList:
+        dictList.append({
+            'id': movie.id,
+            'title': movie.title,
+            'runtime': movie.runtime,
+            'year': movie.year,
+            'rating': movie.rating,
+            'crew': movie.crew,
+            'actors': movie.actors,
+            'genres': movie.genres,
+            'simIndex': movie.simIndex
+        })
+    return dictList
+
 def generateListOfObjectsBasedOnResults(bestResults):
     movies = []
     for result in bestResults:
