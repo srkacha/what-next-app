@@ -10,7 +10,7 @@ app = Flask(__name__)
 def getRecommendationsForMoiveId(movieId):
     movies = movieUtil.getMovieSuggestionsForMovieId(movieId)
     movies = movieUtil.convertListOfObjectsToListOfDictionaries(movies)
-    return jsonify({"data": autoCompleteSuggestions})
+    return jsonify({"data": movies})
 
 @app.route('/what-next/api/movies/auto-suggest/<substring>', methods = ['GET'])
 def getAutoCompleteBasedOnString(substring):
