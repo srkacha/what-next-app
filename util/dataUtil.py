@@ -92,6 +92,7 @@ def getMoviesForFileContentOptimized(movieLines, ratingLines, crewLines, actorLi
         newMovie = movie.Movie(id, title, year, runtime, rating)
         newMovie.setActors(actors)
         newMovie.setCrew(crew)
+        newMovie.setGenres(genres)
         movies.append(newMovie)
 
         movieCounter += 1
